@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kabita | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h2 class="logo">Kabita <span>Tarai</span></h2>
+    <nav class="nav-links">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-text">
+      <h1>Hello, I'm <span>Kabita</span></h1>
+      <h2><span class="typing"></span></h2>
+      <p>
+        Passionate about building clean, user-friendly applications and learning modern technologies.
+      </p>
+      <!-- Social Icons -->
+<div class="hero-socials">
+  <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+  <a href="https://wa.me/919556842922" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.linkedin.com/in/kabita-tarai" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://github.com/thebinarybee" class="social-icon"><i class="fab fa-github"></i></a>
+</div>
+
+<!-- Download CV Button -->
+<a href="assets/Kabita_Tarai_Resume.pdf" class="cv-btn" download>
+  Download CV
+</a>
+
+    </div>
+    <div class="hero-image">
+      <img src="assets/profile.jpg" alt="Kabita Profile">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about hidden" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <p>
+  I am an <strong>MCA fresher</strong> with a strong interest in web and mobile application development.
+  I enjoy creating clean, user-friendly interfaces and learning new technologies step by step.
+  I have worked on academic and personal projects using Java, Android, HTML, CSS, and JavaScript.
+</p>
+
+      <p>
+        My goal is to start my career as a software developer and grow by building meaningful
+        applications that solve real-world problems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills hidden" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card"><i class="fab fa-android"></i> Android</div>
+      <div class="skill-card"><i class="fas fa-mobile-alt"></i> Flutter</div>
+      <div class="skill-card"><i class="fab fa-java"></i> Java</div>
+      <div class="skill-card"><i class="fas fa-fire"></i> Firebase</div>
+      <div class="skill-card"><i class="fab fa-html5"></i> HTML</div>
+      <div class="skill-card"><i class="fab fa-css3-alt"></i> CSS</div>
+      <div class="skill-card"><i class="fab fa-js-square"></i> JavaScript</div>
+      <div class="skill-card"><i class="fab fa-node-js"></i> Node.js</div>
+      <div class="skill-card"><i class="fab fa-react"></i> React</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+<section class="projects hidden" id="projects">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-container">
+
+    <!-- SereniCare -->
+   <div class="project-card"
+  data-title="SereniCare – Diabetes & Wellness App"
+  data-desc="I have used semantic HTML to ensure accessibility and SEO-friendly structure. Smooth scrolling makes navigation seamless."
+  data-tech="Java, Android, Firebase"
+  data-github="#"
+  data-bg="assets/serenicare-bg.jpg"
+>
+  <img src="assets/serenicare.jpg" class="project-logo" alt="SereniCare">
+  <h3>SereniCare</h3>
+</div>
+
+
+    <!-- Auralytix -->
+    <div class="project-card"
+      data-title="Auralytix – AI-Enabled CRM System"
+      data-desc="CRM system to manage leads, clients, and calls with AI-based Text-to-Speech voice calling and automated call logging."
+      data-tech="React, Node.js, MongoDB, Python"
+      data-github="https://github.com/thebinarybee/Personal-Finance-Management-System.git"
+    >
+      <img src="assets/auralytix.png" class="project-logo" alt="Auralytix">
+      <h3>Auralytix</h3>
+    </div>
+
+    <!-- Personal Finance Manager -->
+    <div class="project-card"
+      data-title="Personal Finance Manager"
+      data-desc="Web & mobile app to track expenses, manage budgets, and visualize financial reports."
+      data-tech="HTML, CSS, JavaScript, Java, Android"
+      data-github="https://github.com/thebinarybee/Personal-Finance-Management-System.git"
+    >
+      <img src="assets/finance.png" class="project-logo" alt="Finance Manager">
+      <h3>Personal Finance</h3>
+    </div>
+
+    <!-- Portfolio -->
+    <div class="project-card"
+      data-title="Portfolio Website"
+      data-desc="Modern, responsive personal portfolio to showcase skills, projects, and contact information."
+      data-tech="HTML, CSS, JavaScript"
+      data-github="#"
+    >
+      <img src="assets/portfolio.png" class="project-logo" alt="Portfolio">
+      <h3>Portfolio</h3>
+    </div>
+
+    <!-- SafeTrack -->
+    <div class="project-card"
+      data-title="SafeTrack+ – Women’s Safety App"
+      data-desc="Android app for quick SOS alerts, real-time location sharing, shake detection, and emergency help."
+      data-tech="Java, Firebase, Google Maps API"
+      data-github="https://github.com/thebinarybee/SafeTrack-Plus.git"
+    >
+      <img src="assets/safetrack.png" class="project-logo" alt="SafeTrack">
+      <h3>SafeTrack+</h3>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section class="contact hidden" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p class="contact-text">Feel free to reach out for opportunities, collaborations, or questions.</p>
+    <div class="contact-links">
+      <a href="mailto:kabitatarai2004@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://www.linkedin.com/in/kabita-tarai" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/thebinarybee" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="assets/Kabita_Tarai_Resume.pdf" target="_blank"><i class="fas fa-file"></i> Resume</a>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
