@@ -123,25 +123,57 @@ function erase() {
 }
 type();
 
-const projectCards = document.querySelectorAll('.project-card');
+// 3D TILT + MODAL POPUP
+document.querySelectorAll('.project-card').forEach(card => {
 
-projectCards.forEach(card => {
-  // Create details overlay dynamically
-  const details = document.createElement('div');
-  details.classList.add('project-details');
-  details.innerHTML = `
-    <p>${card.dataset.desc}</p>
-    <p><strong>Tech Stack:</strong> ${card.dataset.tech}</p>
-    ${card.dataset.github ? `<a href="${card.dataset.github}" target="_blank">GitHub</a>` : ''}
-    ${card.dataset.live ? `<a href="${card.dataset.live}" target="_blank">Live Demo</a>` : ''}
-  `;
-  card.appendChild(details);
+  // ---- 3D Tilt (Desktop only)
+  card.addEventListener('mousemove', e => {
+    if (window.innerWidth < 768) return;
 
-  // Toggle active on project name click
-  const projectName = card.querySelector('h3');
-  projectName.addEventListener('click', e => {
-    e.stopPropagation();
-    projectCards.forEach(c => { if(c !== card) c.classList.remove('active'); });
-    card.classList.toggle('active');
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateX = ((y / rect.height) - 0.5) * -10;
+    const rotateY = ((x / rect.width) - 0.5) * 10;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
   });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateX(0) rotateY(0)';
+  });
+
+  // ---- Modal popup
+  card.addEventListener('click', () => {
+
+    const modal = document.createElement('div');
+    modal.className = 'project-modal';
+
+    modal.innerHTML = `
+      <div class="modal-content">
+        <h2>${card.dataset.title}</h2>
+        <p>${card.dataset.desc}</p>
+        <p><strong>Tech:</strong> ${card.dataset.tech}</p>
+
+        <div class="modal-actions">
+          <a href="${card.dataset.github}" target="_blank">GitHub</a>
+          <a href="${card.dataset.live}" target="_blank">Live Demo</a>
+        </div>
+
+        <div class="modal-close">Close</div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', e => {
+      if (e.target.classList.contains('project-modal') ||
+          e.target.classList.contains('modal-close')) {
+        modal.remove();
+      }
+    });
+
+  });
+
 });
